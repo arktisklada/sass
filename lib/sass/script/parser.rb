@@ -391,7 +391,7 @@ RUBY
         return unless e = send(subexpr)
 
         args = []
-        keywords = {}
+        keywords = Sass::Util.ordered_hash
         loop do
           if @lexer.peek && @lexer.peek.type == :colon
             name = e
